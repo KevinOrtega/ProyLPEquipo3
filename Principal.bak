@@ -3,6 +3,6 @@
 
 main()
 {
-   cout<<"vampiro";
+
 	getch();
 }
