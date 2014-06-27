@@ -43,8 +43,7 @@ main()
 		cout<<endl;
 		system("pause");
 		system("cls");
-
-      	do
+	do
 	{
 
 		cout<<"ESCUELA SUPERIOR POLITECNICA DEL CHIMBORAZO"<<endl;
@@ -61,6 +60,39 @@ main()
 		cout<<"  บ   4.- SALIR                         บ"<<endl;
 		cout<<"  บบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ"<<endl;
 		cout<<endl;
-		cout<<"Ingrese la opcion que desea ejecutar:   "<<ends;
+		cout<<"Ingrese la opcion que desea ejecutar:  "<<ends;
 		cin>>op;
+		switch(op)
+		{
+		case 1:
+			{
+				system ("cls");
+				ingresoevento();
+				system("pause");
+				system ("cls");
+				break;
+			}
+		case 2:
+			{
+				system ("cls");
+				eventodia();
+				system("pause");
+				system ("cls");
+				break;
+			}
+		case 3:
+			{
+				system ("cls");
+				eventosemana();
+				system("pause");
+				system ("cls");
+				break;
+			}
+		}
+	}
+   while(op!=4);
+	system("cls");
+	cout<<endl;
+	cout<<" GRACIAS......"<<endl;
+	cout<<endl;
 }
