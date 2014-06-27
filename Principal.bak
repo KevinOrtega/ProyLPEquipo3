@@ -21,9 +21,26 @@ struct tiempo
 
 }
 ;
-// Cambio de usuario prueba
+
 main()
 {
-
-	getch();
+      int op;
+		cout<<"ESCUELA SUPERIOR POLITECNICA DEL CHIMBORAZO"<<endl;
+		cout<<endl;
+		cout<<"  -----------SISTEMAS OPERATIVOS-----------"<<endl;
+		cout<<"  -----------------------------------------"<<endl;
+		cout<<"  -                                       -"<<endl;
+		cout<<"  -   INTEGRANTES:                        -"<<endl;
+		cout<<"  -                                       -"<<endl;
+		cout<<"  -   Jose Enrique Rodas                  -"<<endl;
+		cout<<"  -                                       -"<<endl;
+		cout<<"  -   Jonathan Herrera Silva              -"<<endl;
+      cout<<"  -                                       -"<<endl;
+      cout<<"  -   Kevin Liroy Ortega Chavez           -"<<endl;
+		cout<<"  -                                       -"<<endl;
+		cout<<"  -   Carlos Esteban Estevez Marin        -"<<endl;
+		cout<<"  -----------------------------------------"<<endl;
+		cout<<endl;
+		system("pause");
+		system("cls");
 }
