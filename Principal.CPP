@@ -154,7 +154,30 @@ main()
 }
 
 
+	case 2:
+   {
+   	char* dS[7] = {"Domingo","Lunes","Martes","Miercoles",
+                  "Jueves","Viernes","Sabado"};
+   	time_t tSac = time(NULL);
 
+
+	//now
+   	struct tm* tmP = localtime(&tSac);
+
+   	cout << "Hora: " << tmP->tm_hour << ":" << tmP->tm_min << ":"
+                       << (tmP->tm_sec) << endl;
+   	cout << "Fecha:  " << tmP->tm_mday << "-" << tmP->tm_mon+1 << "-"
+                          << tmP->tm_year+1900 << endl;
+   	cout << "Dia de semana: " << dS[tmP->tm_wday] << endl;
+   	cout << "Dia del anio: " << tmP->tm_yday << endl;
+   	cout << "Horario de verano: " << (tmP->tm_isdst ? "Si" : "No") << endl;
+      system("pause");
+   	system ("cls");
+      break;
+   	return 0;
+
+
+      }
 }
 }
 while(op!=4);
