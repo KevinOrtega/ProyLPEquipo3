@@ -1,30 +1,19 @@
-#include <iostream.h>
-#include <conio.h>
-#include <time.h>
+# include <iostream>
+# include <conio>
+# include <fstream>
+# include <stdio>
+# include <time.h>
 #include <stdlib.h>
 
-
-struct evento
+  struct evento
 {
-  char nombreevento[30], descripcionevento[200];
-  int ano[5], mes [2], dia[2];
-
-}
-;
-
-struct tiempo
-{
-  int tm_min;
-  int tm_hour;
-  int tm_mday;
-  int tm_mon;
-
-}
-;
+   char descripcion[100], nombre[30],fecha[25],hi[25],hf[25],fechaf[25];
+};
 
 main()
 {
-      int op;
+      int op, i=0;
+      struct evento ne;
 		cout<<"ESCUELA SUPERIOR POLITECNICA DEL CHIMBORAZO"<<endl;
 		cout<<endl;
 		cout<<"  -----------SISTEMAS OPERATIVOS-----------"<<endl;
@@ -63,36 +52,117 @@ main()
 		cout<<"Ingrese la opcion que desea ejecutar:  "<<ends;
 		cin>>op;
 		switch(op)
-		{
-		case 1:
-			{
-				system ("cls");
-				ingresoevento();
-				system("pause");
-				system ("cls");
-				break;
-			}
-		case 2:
-			{
-				system ("cls");
-				eventodia();
-				system("pause");
-				system ("cls");
-				break;
-			}
-		case 3:
-			{
-				system ("cls");
-				eventosemana();
-				system("pause");
-				system ("cls");
-				break;
-			}
-		}
-	}
-   while(op!=4);
+ 	{
+   case 1:
+   {
+       //creacion archivo
+   	ofstream PL3("C:/Users/Sistemas/Desktop/Calendario.txt");
+   	PL3<<"\t \t     Calendario de eventos ESPOCH 2014     \t \t"<<"\n";
+   	PL3.close();
+
+     	evento dia;
+      cout<<"\n\n		Nombre del evento:     ";
+      ofstream PL3_1("C:/Users/Sistemas/Desktop/Calendario.txt",ios::app);
+      cin>>(dia.nombre);
+      PL3_1<<(dia.nombre)<<"\n";
+      PL3_1.close();
+    	while (i==0)
+      {
+      		if (strlen(dia.nombre)==0)
+         {
+    			cout<<" Ingrese el dato porfavor:		    ";
+            ofstream PL3_1("C:/Users/Sistemas/Desktop/Calendario.txt",ios::app);
+         	gets(dia.nombre);
+            PL3_1<<(dia.nombre)<<"\n";
+            PL3_1.close();
+         }
+   	else
+   		{
+   		i=1;
+      	}
+      }
+
+   	cout<<"\n		Descripcion del evento:    ";
+   	gets(dia.descripcion);
+   	cout<<"\n		Fecha de inicio:           ";
+
+   	gets(dia.fecha);
+   	i=0;
+   	while (i==0)
+    {
+      	if (strlen(dia.fecha)==0)
+       {
+    			cout<<" Ingrese el dato porfavor		";
+         	gets(dia.fecha);
+       }
+   	else
+   		{
+   		i=1;
+         endl;
+      	}
+    }
+   	cout<<"\n		Hora de inicio:            ";
+   	gets(dia.hi);
+   	i=0;
+   	while (i==0)
+      {
+      	if (strlen(dia.hi)==0)
+   		{
+    			cout<<" Ingrese el dato porfavor:   ";
+         	gets(dia.hi);
+         }
+   	else
+   		{
+   		i=1;
+      	}
+   	}
+   	cout<<"\n		Fecha de finalizacion:      ";
+   	gets(dia.fechaf);
+   	i=0;
+   	while (i==0)
+      {
+      		if (strlen(dia.fechaf)==0)
+   		{
+    			cout<<" Ingrese el dato porfavor: ";
+         	gets(dia.fechaf);
+   		}
+   	else
+   		{
+   		i=1;
+      	}
+   	}
+
+   	cout<<"\n		Hora de finalizacion:     ";
+   	gets(dia.hf);
+   	i=0;
+   	while (i==0)
+      {
+      		if (strlen(dia.hf)==0)
+   		{
+    			cout<<" Ingrese el dato porfavor";
+         	gets(dia.hf);
+   		}
+   	else
+   		{
+   		i=1;
+      	}
+   	}
+
+      system("pause");
+      system ("cls");
+   	break;
+}
+
+
+
+}
+}
+while(op!=4);
 	system("cls");
 	cout<<endl;
 	cout<<" GRACIAS......"<<endl;
 	cout<<endl;
+
+getch();
+
 }
