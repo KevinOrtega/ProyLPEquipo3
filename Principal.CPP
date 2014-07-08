@@ -1,3 +1,4 @@
+
 # include <iostream>
 # include <conio>
 # include <fstream>
@@ -10,6 +11,7 @@
    char descripcion[100], nombre[30],fecha[50],hi[25],hf[25],fechaf[50];
 };
 
+/*Se ingresan los datos del evento*/
 
 void IngresarEvento (evento *eve1)
 	{
@@ -108,6 +110,7 @@ void IngresarEvento (evento *eve1)
    }
 
 
+/*Cada dato del evento se guarda en el archivo extension txt*/
 void guardararchivo (evento *eve2)
 	{
    	//creacion archivo
@@ -168,17 +171,17 @@ main()
 
 		cout<<"ESCUELA SUPERIOR POLITECNICA DEL CHIMBORAZO"<<endl;
 		cout<<endl;
-		cout<<"  ººººººCALENDARIO DE EVENTOS ESPOCHººººº"<<endl;
-		cout<<"  ºººººººººººººMENU PRINCIPALºººººººººººº"<<endl;
-		cout<<"  º                                     º"<<endl;
-		cout<<"  º   1.- INGRESAR EVENTO               º"<<endl;
-		cout<<"  º                                     º"<<endl;
-		cout<<"  º   2.- EVENTOS DEL DIA               º"<<endl;
-		cout<<"  º                                     º"<<endl;
-		cout<<"  º   3.- EVENTOS DE LA SEMANA          º"<<endl;
-		cout<<"  º                                     º"<<endl;
-		cout<<"  º   4.- SALIR                         º"<<endl;
-		cout<<"  ººººººººººººººººººººººººººººººººººººººº"<<endl;
+		cout<<"  ÂºÂºÂºÂºÂºÂºCALENDARIO DE EVENTOS ESPOCHÂºÂºÂºÂºÂº"<<endl;
+		cout<<"  ÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºMENU PRINCIPALÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂº"<<endl;
+		cout<<"  Âº                                     Âº"<<endl;
+		cout<<"  Âº   1.- INGRESAR EVENTO               Âº"<<endl;
+		cout<<"  Âº                                     Âº"<<endl;
+		cout<<"  Âº   2.- EVENTOS DEL DIA               Âº"<<endl;
+		cout<<"  Âº                                     Âº"<<endl;
+		cout<<"  Âº   3.- EVENTOS DE LA SEMANA          Âº"<<endl;
+		cout<<"  Âº                                     Âº"<<endl;
+		cout<<"  Âº   4.- SALIR                         Âº"<<endl;
+		cout<<"  ÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂº"<<endl;
 		cout<<endl;
 		cout<<"Ingrese la opcion que desea ejecutar:  "<<ends;
 		cin>>op;
