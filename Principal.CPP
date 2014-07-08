@@ -7,8 +7,139 @@
 
   struct evento
 {
-   char descripcion[100], nombre[30],fecha[25],hi[25],hf[25],fechaf[25];
+   char descripcion[100], nombre[30],fecha[50],hi[25],hf[25],fechaf[50];
 };
+
+
+void IngresarEvento (evento *eve1)
+	{
+      int i;
+   	cout<<"\n\n		Nombre del evento:     ";
+      gets ((*eve1). nombre);
+    	while (i==0)
+      {
+      		if (strlen((*eve1).nombre)==0)
+         {
+    			cout<<" Ingrese el dato porfavor:		    ";
+         	gets ((*eve1).nombre);
+         }
+   	else
+   		{
+   		i=1;
+      	}
+      }
+
+   	cout<<"\n		Descripcion del evento:    ";
+   	gets ((*eve1).descripcion);
+      while (i==0)
+      {
+      		if (strlen((*eve1).descripcion)==0)
+         {
+    			cout<<" Ingrese el dato porfavor:		    ";
+         	gets ((*eve1).descripcion);
+         }
+   	else
+   		{
+   		i=1;
+      	}
+      }
+
+   	cout<<"\n		Fecha de inicio:           ";
+		gets ((*eve1).fecha);
+   	while (i==0)
+      {
+      	if (strlen((*eve1).fecha)==0)
+       {
+    			cout<<" Ingrese el dato porfavor		";
+         	gets((*eve1).fecha);
+       }
+   	else
+   		{
+   		i=1;
+      	}
+      }
+
+   	cout<<"\n		Hora de inicio:            ";
+   	gets((*eve1).hi);
+   	while (i==0)
+      {
+      	if (strlen((*eve1).hi)==0)
+   		{
+    			cout<<" Ingrese el dato porfavor:   ";
+         	gets((*eve1).hi);
+         }
+   	else
+   		{
+   		i=1;
+      	}
+   	}
+
+   	cout<<"\n		Fecha de finalizacion:      ";
+   	gets((*eve1).fechaf);
+   	while (i==0)
+      {
+      		if (strlen((*eve1).fechaf)==0)
+   		{
+    			cout<<" Ingrese el dato porfavor: ";
+         	gets((*eve1).fechaf);
+   		}
+   	else
+   		{
+   		i=1;
+      	}
+   	}
+
+   	cout<<"\n		Hora de finalizacion:     ";
+   	gets((*eve1).hf);
+   	while (i==0)
+      {
+      		if (strlen((*eve1).hf)==0)
+   		{
+
+    			cout<<" Ingrese el dato porfavor";
+         	gets((*eve1).hf);
+   		}
+   	else
+   		{
+   		i=1;
+      	}
+   	}
+
+   }
+
+
+void guardararchivo (evento *eve2)
+	{
+   	//creacion archivo
+   	ifstream PL3("C:/Users/Sistemas/Desktop/Calendario.txt");
+   	if (!PL3)
+   		{
+        		ofstream PL3("C:/Users/Sistemas/Desktop/Calendario.txt");
+         	PL3<<"\t \t     Calendario de eventos ESPOCH 2014     \t \t"<<"\n";
+         PL3<< (*eve2).nombre<<", ";
+         PL3<< (*eve2).descripcion<<", ";
+         PL3<< (*eve2).fecha<<", ";
+         PL3<< (*eve2).hi<<", ";
+         PL3<< (*eve2).hf<<", ";
+         PL3<< (*eve2).fechaf<<";"<<endl;
+         PL3.close();
+			}
+   	else
+   		{
+         ofstream PL3_1("C:/Users/Sistemas/Desktop/Calendario.txt",ios::app);
+         PL3_1<< (*eve2).nombre<<", ";
+         PL3_1<< (*eve2).descripcion<<", ";
+         PL3_1<< (*eve2).fecha<<", ";
+         PL3_1<< (*eve2).hi<<", ";
+         PL3_1<< (*eve2).hf<<", ";
+         PL3_1<< (*eve2).fechaf<<";"<<endl;
+         PL3_1.close();
+	      }
+
+
+   }
+
+
 
 main()
 {
@@ -55,98 +186,11 @@ main()
  	{
    case 1:
    {
-       //creacion archivo
-   	ofstream PL3("C:/Users/Sistemas/Desktop/Calendario.txt");
-   	PL3<<"\t \t     Calendario de eventos ESPOCH 2014     \t \t"<<"\n";
-   	PL3.close();
 
      	evento dia;
-      cout<<"\n\n		Nombre del evento:     ";
-      ofstream PL3_1("C:/Users/Sistemas/Desktop/Calendario.txt",ios::app);
-      cin>>(dia.nombre);
-      PL3_1<<(dia.nombre)<<"\n";
-      PL3_1.close();
-    	while (i==0)
-      {
-      		if (strlen(dia.nombre)==0)
-         {
-    			cout<<" Ingrese el dato porfavor:		    ";
-            ofstream PL3_1("C:/Users/Sistemas/Desktop/Calendario.txt",ios::app);
-         	gets(dia.nombre);
-            PL3_1<<(dia.nombre)<<"\n";
-            PL3_1.close();
-         }
-   	else
-   		{
-   		i=1;
-      	}
-      }
+      IngresarEvento (&dia);
+      guardararchivo (&dia);
 
-   	cout<<"\n		Descripcion del evento:    ";
-   	gets(dia.descripcion);
-   	cout<<"\n		Fecha de inicio:           ";
-
-   	gets(dia.fecha);
-   	i=0;
-   	while (i==0)
-    {
-      	if (strlen(dia.fecha)==0)
-       {
-    			cout<<" Ingrese el dato porfavor		";
-         	gets(dia.fecha);
-       }
-   	else
-   		{
-   		i=1;
-         endl;
-      	}
-    }
-   	cout<<"\n		Hora de inicio:            ";
-   	gets(dia.hi);
-   	i=0;
-   	while (i==0)
-      {
-      	if (strlen(dia.hi)==0)
-   		{
-    			cout<<" Ingrese el dato porfavor:   ";
-         	gets(dia.hi);
-         }
-   	else
-   		{
-   		i=1;
-      	}
-   	}
-   	cout<<"\n		Fecha de finalizacion:      ";
-   	gets(dia.fechaf);
-   	i=0;
-   	while (i==0)
-      {
-      		if (strlen(dia.fechaf)==0)
-   		{
-    			cout<<" Ingrese el dato porfavor: ";
-         	gets(dia.fechaf);
-   		}
-   	else
-   		{
-   		i=1;
-      	}
-   	}
-
-   	cout<<"\n		Hora de finalizacion:     ";
-   	gets(dia.hf);
-   	i=0;
-   	while (i==0)
-      {
-      		if (strlen(dia.hf)==0)
-   		{
-    			cout<<" Ingrese el dato porfavor";
-         	gets(dia.hf);
-   		}
-   	else
-   		{
-   		i=1;
-      	}
-   	}
 
       system("pause");
       system ("cls");
@@ -166,11 +210,19 @@ main()
 
    	cout << "Hora: " << tmP->tm_hour << ":" << tmP->tm_min << ":"
                        << (tmP->tm_sec) << endl;
-   	cout << "Fecha:  " << tmP->tm_mday << "-" << tmP->tm_mon+1 << "-"
-                          << tmP->tm_year+1900 << endl;
+   	cout << "Fecha:  " << tmP->tm_mday << "-" << (tmP->tm_mon+1) << "-"
+                          << (tmP->tm_year+1900) << endl;
    	cout << "Dia de semana: " << dS[tmP->tm_wday] << endl;
    	cout << "Dia del anio: " << tmP->tm_yday << endl;
    	cout << "Horario de verano: " << (tmP->tm_isdst ? "Si" : "No") << endl;
+      ifstream PL3("C:/Users/Sistemas/Desktop/Calendario.txt");
+      char linea[255];
+      while(!PL3.eof())
+      {
+      	PL3.getline(linea,100);
+         cout<<linea;
+
+      }
       system("pause");
    	system ("cls");
       break;
