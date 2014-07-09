@@ -31,20 +31,9 @@ void IngresarEvento (evento *eve1)
       	}
       }
 
-   	cout<<"\n		Descripcion del evento:    ";
+  	cout<<"\n		Descripcion del evento:    ";
    	gets ((*eve1).descripcion);
-      while (i==0)
-      {
-      		if (strlen((*eve1).descripcion)==0)
-         {
-    			cout<<" Ingrese el dato porfavor:		    ";
-         	gets ((*eve1).descripcion);
-         }
-   	else
-   		{
-   		i=1;
-      	}
-      }
+   	
   	cout<<"\n		Fecha de inicio:           ";
 		gets ((*eve1).fecha);
       i=0;
