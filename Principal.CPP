@@ -15,14 +15,14 @@
 
 void IngresarEvento (evento *eve1)
 	{
-      int i;
+      int i=0;
    	cout<<"\n\n		Nombre del evento:     ";
       gets ((*eve1). nombre);
     	while (i==0)
       {
-      		if (strlen((*eve1).nombre)==0)
+      		if (strlen((*eve1).nombre)<=3)
          {
-    			cout<<" Ingrese el dato porfavor:		    ";
+    			cout<<" Ingrese el nombre del evento por favor:		    ";
          	gets ((*eve1).nombre);
          }
    	else
@@ -45,14 +45,14 @@ void IngresarEvento (evento *eve1)
    		i=1;
       	}
       }
-
-   	cout<<"\n		Fecha de inicio:           ";
+  	cout<<"\n		Fecha de inicio:           ";
 		gets ((*eve1).fecha);
+      i=0;
    	while (i==0)
       {
-      	if (strlen((*eve1).fecha)==0)
+      	if (strlen((*eve1).fecha)<=3)
        {
-    			cout<<" Ingrese el dato porfavor		";
+    			cout<<" Ingrese la fecha de inicio por favor		";
          	gets((*eve1).fecha);
        }
    	else
@@ -63,11 +63,12 @@ void IngresarEvento (evento *eve1)
 
    	cout<<"\n		Hora de inicio:            ";
    	gets((*eve1).hi);
+      i=0;
    	while (i==0)
       {
-      	if (strlen((*eve1).hi)==0)
+      	if (strlen((*eve1).hi)<=3)
    		{
-    			cout<<" Ingrese el dato porfavor:   ";
+    			cout<<" Ingrese la hora de inicio por favor:   ";
          	gets((*eve1).hi);
          }
    	else
@@ -78,11 +79,12 @@ void IngresarEvento (evento *eve1)
 
    	cout<<"\n		Fecha de finalizacion:      ";
    	gets((*eve1).fechaf);
+      i=0;
    	while (i==0)
       {
-      		if (strlen((*eve1).fechaf)==0)
+      		if (strlen((*eve1).fechaf)<=3)
    		{
-    			cout<<" Ingrese el dato porfavor: ";
+    			cout<<" Ingrese la fecha de finalizacion por favor: ";
          	gets((*eve1).fechaf);
    		}
    	else
@@ -93,12 +95,13 @@ void IngresarEvento (evento *eve1)
 
    	cout<<"\n		Hora de finalizacion:     ";
    	gets((*eve1).hf);
+      i=0;
    	while (i==0)
       {
-      		if (strlen((*eve1).hf)==0)
+      		if (strlen((*eve1).hf)<=3)
    		{
 
-    			cout<<" Ingrese el dato porfavor";
+    			cout<<" Ingrese la hora de finalizacion por favor";
          	gets((*eve1).hf);
    		}
    	else
@@ -108,6 +111,7 @@ void IngresarEvento (evento *eve1)
    	}
 
    }
+ 
 
 
 /*Cada dato del evento se guarda en el archivo extension txt*/
