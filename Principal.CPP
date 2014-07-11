@@ -216,7 +216,7 @@ main()
       while(!PL3.eof())
       {
       	PL3.getline(linea,100);
-         cout<<linea;
+         cout<<linea<<endl;
 
       }
       system("pause");
